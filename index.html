@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>School Website</title>
+  <style>
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    .section-padding {
+      padding: 60px 20px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* Navbar Styles */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background-color: #008000;
+      color: white;
+      position: relative;
+      z-index: 1000;
+      position: fixed;
+      /* right: 0; */
+      width: 100%;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .navLinks {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .navLinks li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .navLinks li a:hover,
+    .navLinks li a.active {
+      text-decoration: underline;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 6px;
+      z-index: 1001;
+    }
+
+    .hamburger span {
+      width: 28px;
+      height: 3px;
+      background-color: white;
+      border-radius: 2px;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      display: none;
+    }
+
+    .overlay.active {
+      display: block;
+    }
+
+    /* Hero Section with Carousel */
+    .hero {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .hero-slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .hero-slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: absolute;
+      bottom: 40px;
+      left: 40px;
+      padding: 20px 30px;
+      border-radius: 8px;
+      max-width: 500px;
+      color: white;
+      animation: fadeInUp 1s ease-in;
+      text-align: left;
+    }
+
+    .hero-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+    }
+
+    .hero-btn {
+      padding: 10px 20px;
+      background-color: #008000;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    .hero-btn:hover {
+      background-color: #006400;
+    }
+
+    /* Welcome Section */
+    .welcome {
+      text-align: center;
+      background-color: #ffffff;
+    }
+
+    .welcome h2 {
+      font-size: 2rem;
+      color: #008000;
+      margin-bottom: 15px;
+    }
+
+    .welcome p {
+      font-size: 1.1rem;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Highlights */
+    .highlights {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      background-color: #f0f8f0;
+      text-align: center;
+      padding: 60px 20px;
+      gap: 30px;
+    }
+
+    .highlight-box {
+      flex: 1 1 250px;
+      margin: 20px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .highlight-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .highlight-box h3 {
+      color: #008000;
+      margin-bottom: 10px;
+    }
+
+    .highlight-box p {
+      color: #555;
+    }
+
+    /* Quote Section */
+    .mission-banner {
+      background-color: #f2f2f2;
+      text-align: center;
+    }
+
+    .mission-banner h2 {
+      font-size: 1.8rem;
+      max-width: 800px;
+      margin: 0 auto 10px;
+      color: #333;
+      font-style: italic;
+    }
+
+    .mission-banner p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    /* About Section */
+    .about-section {
+      background-color: #f4f4f4;
+    }
+
+    .about-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: auto;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .about-image {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .about-logo {
+      width: 180px;
+      height: auto;
+      margin-bottom: 15px;
+    }
+
+    .about-text h2 {
+      color: #004225;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .about-text p {
+      color: #333;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .read-more {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #008000;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      font-weight: bold;
+    }
+
+    .read-more:hover {
+      background-color: #006400;
+    }
+
+    /* Admission Section */
+    .admission-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      background-color: #f9f9f9;
+      gap: 20px;
+    }
+
+    .admission-image {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .admission-image img {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .admission-content {
+      flex: 1;
+      min-width: 300px;
+      padding: 20px;
+    }
+
+    .admission-content h2 {
+      font-size: 2rem;
+      color: #004225;
+      margin-bottom: 10px;
+    }
+
+    .admission-content h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 15px;
+      color: #111;
+    }
+
+    .admission-content p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    .apply-btn {
+      display: inline-block;
+      background-color: #008000;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    .apply-btn:hover {
+      background-color: #006400;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #004225;
+      color: #fff;
+      padding-top: 40px;
+      font-size: 0.95rem;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px 30px;
+    }
+
+    .footer-about,
+    .footer-links,
+    .footer-contact {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .footer h3, .footer h4 {
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .footer p, .footer li {
+      color: #ddd;
+      margin-bottom: 8px;
+      list-style-type: none;
+    }
+
+    .footer a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding: 15px 20px;
+      background-color: #003314;
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .about-wrapper,
+      .admission-section,
+      .footer-content,
+      .navLinks {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about-text,
+      .admission-content {
+        padding: 20px 10px;
+      }
+
+      .apply-btn {
+        width: 100%;
+        padding: 15px;
+      }
+
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+      }
+
+      .hero-btn {
+        padding: 10px 20px;
+      }
+
+      .navLinks {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #008000;
+        height: 100vh;
+        width: 75vw;
+        align-items: flex-start;
+        padding: 40px 20px;
+        gap: 20px;
+        transform: translateX(-100%);
+        z-index: 1000;
+      }
+
+      .navLinks.active {
+        transform: translateX(0);
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">🏫</div>
+    <ul class="navLinks" id="navLinks">
+      <li><a href="#">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#admissions">Admissions</a></li>
+      <li><a href="#">Community</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Hero Section with Carousel -->
+  <section class="hero">
+    <div class="hero-slide active" style="background-image: url('/assets/IMG-20250702-WA0025.jpg')">
+      <div class="hero-content">
+        <h1>Welcome to TASUED</h1>
+        <p>Empowering the future through education</p>
+        <a href="#about" class="hero-btn">Learn More</a>
+      </div>
+    </div>
+    <div class="hero-slide" style="background-image: url('/assets/IMG-20250702-WA0023.jpg')">
+      <div class="hero-content">
+        <h1>Innovation in Learning</h1>
+        <p>We combine tradition with modern technologies for quality education</p>
+        <a href="#admissions" class="hero-btn">Apply Now</a>
+      </div>
+    </div>
+    <div class="hero-slide" style="background-image: url('/assets/IMG-20250702-WA0030.jpg')">
+      <div class="hero-content">
+        <h1>Join Our Global Community</h1>
+        <p>Partnered with institutions and leaders around the world</p>
+        <a href="#" class="hero-btn">Discover More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Welcome Section -->
+  <section class="welcome section-padding">
+    <div class="container">
+      <h2>Who We Are</h2>
+      <p>
+        We are a dynamic institution committed to academic excellence, innovation, and shaping the future leaders of tomorrow.
+        With a legacy of quality education and a passion for nurturing talent, we welcome you to be part of our story.
+      </p>
+    </div>
+  </section>
+
+  <!-- Highlights Section -->
+  <section class="highlights">
+    <div class="highlight-box">
+      <h3>🏅 Academic Excellence</h3>
+      <p>Recognized nationally and globally for our academic strength.</p>
+    </div>
+    <div class="highlight-box">
+      <h3>🎓 Diverse Programs</h3>
+      <p>Offering a wide range of undergraduate and postgraduate courses.</p>
+    </div>
+    <div class="highlight-box">
+      <h3>🌍 Global Reach</h3>
+      <p>Partnered with institutions and organizations across the world.</p>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="mission-banner section-padding">
+    <div class="banner-content">
+      <h2>"Education is the most powerful weapon you can use to change the world."</h2>
+      <p>– Nelson Mandela</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section section-padding" id="about">
+    <div class="about-wrapper">
+      <div class="about-image">
+        <img src="/assets/IMG-20250702-WA0026.jpg" alt="Campus View" />
+      </div>
+      <div class="about-text">
+        <img src="/assets/about.png" alt="About Logo" class="about-logo" />
+        <h2>About Us</h2>
+        <p>Welcome to the Nation’s Premier University of Education...</p>
+        <p>We aim to enhance the quality of teaching and learning using modern technologies...</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Admission Section -->
+  <section class="admission-section section-padding" id="admissions">
+    <div class="admission-image">
+      <img src="/assets/IMG-20250702-WA0029.jpg" alt="Admission Image" />
+    </div>
+    <div class="admission-content">
+      <h2>Apply for Admission</h2>
+      <h3>2024/2025 applications are now open</h3>
+      <p>We don’t just give students an education. We help them find passion and lead in their chosen fields.</p>
+      <a href="#" class="apply-btn">Apply Now</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-about">
+        <h3>🏫 TASUED</h3>
+        <p>Leading the future of education with innovation, values, and excellence.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#admissions">Admissions</a></li>
+          <li><a href="#">Community</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p>Email: info@tasued.edu.ng</p>
+        <p>Phone: +234 123 456 7890</p>
+        <p>Ijebu-Ode, Ogun State, Nigeria</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 TASUED. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Hero Carousel Script -->
+  <script>
+    const slides = document.querySelectorAll(".hero-slide");
+    let index = 0;
+
+    function showSlide(i) {
+      slides.forEach((slide, idx) => {
+        slide.classList.remove("active");
+        if (idx === i) slide.classList.add("active");
+      });
+    }
+
+    function autoSlide() {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    }
+
+    setInterval(autoSlide, 5000); // Slide every 5 seconds
+     const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  const overlay = document.getElementById('overlay');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    overlay.classList.toggle('active');
+  });
+
+  overlay.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    overlay.classList.remove('active');
+  });
+  </script>
+</body>
+</html>
