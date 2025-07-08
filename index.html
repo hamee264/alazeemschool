@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>School Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Al-Azeem Model College</title>
+  <!-- Styles -->
   <style>
-    /* Reset and base styles */
+   /* Reset and base styles */
     * {
       margin: 0;
       padding: 0;
@@ -186,7 +188,7 @@
       padding: 20px;
       background: #fff;
       border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
       transition: transform 0.3s ease;
     }
 
@@ -375,12 +377,14 @@
       min-width: 250px;
     }
 
-    .footer h3, .footer h4 {
+    .footer h3,
+    .footer h4 {
       color: #fff;
       margin-bottom: 10px;
     }
 
-    .footer p, .footer li {
+    .footer p,
+    .footer li {
       color: #ddd;
       margin-bottom: 8px;
       list-style-type: none;
@@ -406,6 +410,7 @@
 
     /* Responsive */
     @media (max-width: 768px) {
+
       .about-wrapper,
       .admission-section,
       .footer-content,
@@ -465,15 +470,80 @@
         opacity: 0;
         transform: translateY(40px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
+    /* Awards Section */
+.awards-section {
+  background-color: #f0f8f0;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #008000;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 40px;
+}
+
+.awards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.award-box {
+  flex: 1 1 280px;
+  max-width: 350px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+.award-box:hover {
+  transform: translateY(-6px);
+}
+
+.award-box h3 {
+  color: #004225;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.award-box p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .awards-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .award-box {
+    width: 100%;
+  }
+}
+
   </style>
 </head>
-<body>
 
+<body>
   <!-- Navbar -->
   <nav class="navbar">
     <div class="logo">🏫</div>
@@ -489,11 +559,11 @@
   </nav>
   <div class="overlay" id="overlay"></div>
 
-  <!-- Hero Section with Carousel -->
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-slide active" style="background-image: url('/assets/IMG-20250702-WA0025.jpg')">
       <div class="hero-content">
-        <h1>Welcome to TASUED</h1>
+        <h1>Welcome to Al-Azeem Model College</h1>
         <p>Empowering the future through education</p>
         <a href="#about" class="hero-btn">Learn More</a>
       </div>
@@ -507,8 +577,8 @@
     </div>
     <div class="hero-slide" style="background-image: url('/assets/IMG-20250702-WA0030.jpg')">
       <div class="hero-content">
-        <h1>Join Our Global Community</h1>
-        <p>Partnered with institutions and leaders around the world</p>
+        <h1>Join Our Community</h1>
+        <p>Building future leaders with discipline, knowledge, and purpose</p>
         <a href="#" class="hero-btn">Discover More</a>
       </div>
     </div>
@@ -519,8 +589,9 @@
     <div class="container">
       <h2>Who We Are</h2>
       <p>
-        We are a dynamic institution committed to academic excellence, innovation, and shaping the future leaders of tomorrow.
-        With a legacy of quality education and a passion for nurturing talent, we welcome you to be part of our story.
+        Al-Azeem Model College is a dynamic institution in Ijebu-Ode, Ogun State, committed to academic excellence,
+        innovation, and discipline.
+        With a legacy of shaping future leaders, we welcome you to be part of our success story.
       </p>
     </div>
   </section>
@@ -529,19 +600,19 @@
   <section class="highlights">
     <div class="highlight-box">
       <h3>🏅 Academic Excellence</h3>
-      <p>Recognized nationally and globally for our academic strength.</p>
+      <p>Consistent record of top performances in WAEC and NECO examinations.</p>
     </div>
     <div class="highlight-box">
-      <h3>🎓 Diverse Programs</h3>
-      <p>Offering a wide range of undergraduate and postgraduate courses.</p>
+      <h3>📚 Moral Discipline</h3>
+      <p>We instill sound moral values and discipline in all our students.</p>
     </div>
     <div class="highlight-box">
-      <h3>🌍 Global Reach</h3>
-      <p>Partnered with institutions and organizations across the world.</p>
+      <h3>🏫 Modern Facilities</h3>
+      <p>Our campus is equipped with state-of-the-art classrooms and laboratories.</p>
     </div>
   </section>
 
-  <!-- Quote -->
+  <!-- Quote Section -->
   <section class="mission-banner section-padding">
     <div class="banner-content">
       <h2>"Education is the most powerful weapon you can use to change the world."</h2>
@@ -553,17 +624,43 @@
   <section class="about-section section-padding" id="about">
     <div class="about-wrapper">
       <div class="about-image">
-        <img src="/assets/IMG-20250702-WA0026.jpg" alt="Campus View" />
+        <img src="/assets/IMG-20250702-WA0026.jpg" alt="Al-Azeem School View" />
       </div>
       <div class="about-text">
-        <img src="/assets/about.png" alt="About Logo" class="about-logo" />
-        <h2>About Us</h2>
-        <p>Welcome to the Nation’s Premier University of Education...</p>
-        <p>We aim to enhance the quality of teaching and learning using modern technologies...</p>
+        <img src="/assets/about.png" alt="School Logo" class="about-logo" />
+        <h2>About Al-Azeem</h2>
+        <p>Welcome to Al-Azeem Model College — a citadel of academic excellence located in the heart of Ijebu-Ode, Ogun State.</p>
+        <p>Our mission is to provide sound education enriched with Islamic and moral values, using modern technologies and dedicated educators.</p>
         <a href="#" class="read-more">Read More</a>
       </div>
     </div>
   </section>
+<!-- Awards Section -->
+<section class="awards-section section-padding">
+  <div class="container">
+    <h2 class="section-title">🏆 Awards & Achievements</h2>
+    <p class="section-subtitle">Celebrating our legacy of excellence</p>
+
+    <div class="awards-grid">
+      <div class="award-box">
+        <h3>Best Secondary School in Ogun State</h3>
+        <p>Awarded by the Ogun State Ministry of Education for outstanding academic results – 2024.</p>
+      </div>
+      <div class="award-box">
+        <h3>Top WAEC Performer</h3>
+        <p>Ranked among the top 5 schools nationwide for WAEC performance three years in a row.</p>
+      </div>
+      <div class="award-box">
+        <h3>Innovation in ICT Education</h3>
+        <p>Recognized for integrating smart classrooms and digital learning tools in 2023 & 2025.</p>
+      </div>
+      <div class="award-box">
+        <h3>National Science Olympiad Finalist</h3>
+        <p>Our students consistently represent Ogun State in national science competitions.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- Admission Section -->
   <section class="admission-section section-padding" id="admissions">
@@ -572,8 +669,8 @@
     </div>
     <div class="admission-content">
       <h2>Apply for Admission</h2>
-      <h3>2024/2025 applications are now open</h3>
-      <p>We don’t just give students an education. We help them find passion and lead in their chosen fields.</p>
+      <h3>2025/2026 Academic Session Now Open</h3>
+      <p>At Al-Azeem Model College, we guide students toward academic excellence and spiritual development. Enroll now to secure your child's future.</p>
       <a href="#" class="apply-btn">Apply Now</a>
     </div>
   </section>
@@ -582,8 +679,8 @@
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-about">
-        <h3>🏫 TASUED</h3>
-        <p>Leading the future of education with innovation, values, and excellence.</p>
+        <h3>🏫 Al-Azeem Model College</h3>
+        <p>Empowering minds and building futures in Ijebu-Ode, Ogun State, Nigeria.</p>
       </div>
       <div class="footer-links">
         <h4>Quick Links</h4>
@@ -596,17 +693,17 @@
       </div>
       <div class="footer-contact">
         <h4>Contact Us</h4>
-        <p>Email: info@tasued.edu.ng</p>
-        <p>Phone: +234 123 456 7890</p>
-        <p>Ijebu-Ode, Ogun State, Nigeria</p>
+        <p>Email: info@alazeemcollege.ng</p>
+        <p>Phone: +234 812 345 6789</p>
+        <p>Address: Ijebu-Ode, Ogun State, Nigeria</p>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 TASUED. All rights reserved.</p>
+      <p>&copy; 2025 Al-Azeem Model College. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Hero Carousel Script -->
+  <!-- Scripts -->
   <script>
     const slides = document.querySelectorAll(".hero-slide");
     let index = 0;
@@ -623,20 +720,22 @@
       showSlide(index);
     }
 
-    setInterval(autoSlide, 5000); // Slide every 5 seconds
-     const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('navLinks');
-  const overlay = document.getElementById('overlay');
+    setInterval(autoSlide, 5000);
 
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    overlay.classList.toggle('active');
-  });
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    const overlay = document.getElementById('overlay');
 
-  overlay.addEventListener('click', () => {
-    navLinks.classList.remove('active');
-    overlay.classList.remove('active');
-  });
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      overlay.classList.toggle('active');
+    });
+
+    overlay.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      overlay.classList.remove('active');
+    });
   </script>
 </body>
+
 </html>
