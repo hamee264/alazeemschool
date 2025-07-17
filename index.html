@@ -5,10 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Al-Azeem Model College</title>
-  <!-- Styles -->
   <style>
-   /* Reset and base styles */
-    * {
+     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -36,7 +34,7 @@
       color: white;
       position: relative;
       z-index: 1000;
-      position: fixed;
+      /* position: fixed; */
       /* right: 0; */
       width: 100%;
     }
@@ -99,6 +97,7 @@
       position: relative;
       height: 100vh;
       overflow: hidden;
+      /* margin-top: 00px; */
     }
 
     .hero-slide {
@@ -126,6 +125,7 @@
       color: white;
       animation: fadeInUp 1s ease-in;
       text-align: left;
+      background: #006400;
     }
 
     .hero-content h1 {
@@ -462,6 +462,13 @@
       .hamburger {
         display: flex;
       }
+      .hero-content {
+        left: 0%;
+        max-width: 400px;
+        margin: 10px;
+        padding: 10px 10px;
+
+      }
     }
 
     /* Animations */
@@ -476,70 +483,70 @@
         transform: translateY(0);
       }
     }
+
     /* Awards Section */
-.awards-section {
-  background-color: #f0f8f0;
-  text-align: center;
-}
+    .awards-section {
+      background-color: #f0f8f0;
+      text-align: center;
+    }
 
-.section-title {
-  font-size: 2rem;
-  color: #008000;
-  margin-bottom: 10px;
-}
+    .section-title {
+      font-size: 2rem;
+      color: #008000;
+      margin-bottom: 10px;
+    }
 
-.section-subtitle {
-  font-size: 1rem;
-  color: #444;
-  margin-bottom: 40px;
-}
+    .section-subtitle {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 40px;
+    }
 
-.awards-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-}
+    .awards-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
 
-.award-box {
-  flex: 1 1 280px;
-  max-width: 350px;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
-  text-align: left;
-}
+    .award-box {
+      flex: 1 1 280px;
+      max-width: 350px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+      text-align: left;
+    }
 
-.award-box:hover {
-  transform: translateY(-6px);
-}
+    .award-box:hover {
+      transform: translateY(-6px);
+    }
 
-.award-box h3 {
-  color: #004225;
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-}
+    .award-box h3 {
+      color: #004225;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
 
-.award-box p {
-  color: #555;
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
+    .award-box p {
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .awards-grid {
-    flex-direction: column;
-    align-items: center;
-  }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .awards-grid {
+        flex-direction: column;
+        align-items: center;
+      }
 
-  .award-box {
-    width: 100%;
-  }
-}
-
+      .award-box {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 
@@ -579,7 +586,7 @@
       <div class="hero-content">
         <h1>Join Our Community</h1>
         <p>Building future leaders with discipline, knowledge, and purpose</p>
-        <a href="#" class="hero-btn">Discover More</a>
+        <a href="#about" class="hero-btn">Discover More</a>
       </div>
     </div>
   </section>
@@ -610,6 +617,20 @@
       <h3>🏫 Modern Facilities</h3>
       <p>Our campus is equipped with state-of-the-art classrooms and laboratories.</p>
     </div>
+    <div class="highlight-box">
+      <h3>🎯 Vision</h3>
+      <p>To build ideal and Islamic spirited educated individuals, who are outstanding role models and exemplary
+        citizens in the diverse society.</p>
+    </div>
+    <div class="highlight-box">
+      <h3>🕌 Mission</h3>
+      <p>Creating learning environment that produces active and excellent students, through the instrumentality of
+        Islamic oriented knowledge, values and inspiration.</p>
+      <p>Transmitting worthwhile secular and Islamic knowledge, providing safe upbringing away from negative
+        influences, and developing strong character through core values of Islam.</p>
+      <p>Maintaining well certified, god-fearing, zealous and highly productive staffs, who integrate ideal Islamic
+        principles, ethics, morals and self disciplines, towards excellent achievement of goals of the school.</p>
+    </div>
   </section>
 
   <!-- Quote Section -->
@@ -624,53 +645,56 @@
   <section class="about-section section-padding" id="about">
     <div class="about-wrapper">
       <div class="about-image">
-        <img src="/assets/IMG-20250702-WA0026.jpg" alt="Al-Azeem School View" />
+        <img src="/assets/IMG-20250702-WA0026.jpg" alt="Al-Azeem school view" />
       </div>
       <div class="about-text">
-        <img src="/assets/about.png" alt="School Logo" class="about-logo" />
+        <!-- <img src="/assets/about.png" alt="Al-Azeem logo" class="about-logo" /> -->
         <h2>About Al-Azeem</h2>
-        <p>Welcome to Al-Azeem Model College — a citadel of academic excellence located in the heart of Ijebu-Ode, Ogun State.</p>
-        <p>Our mission is to provide sound education enriched with Islamic and moral values, using modern technologies and dedicated educators.</p>
+        <p>Welcome to Al-Azeem Model College — a citadel of academic excellence located in the heart of Ijebu-Ode, Ogun
+          State.</p>
+        <p>Our mission is to provide sound education enriched with Islamic and moral values, using modern technologies
+          and dedicated educators.</p>
         <a href="#" class="read-more">Read More</a>
       </div>
     </div>
   </section>
-<!-- Awards Section -->
-<section class="awards-section section-padding">
-  <div class="container">
-    <h2 class="section-title">🏆 Awards & Achievements</h2>
-    <p class="section-subtitle">Celebrating our legacy of excellence</p>
 
-    <div class="awards-grid">
-      <div class="award-box">
-        <h3>Best Secondary School in Ogun State</h3>
-        <p>Awarded by the Ogun State Ministry of Education for outstanding academic results – 2024.</p>
-      </div>
-      <div class="award-box">
-        <h3>Top WAEC Performer</h3>
-        <p>Ranked among the top 5 schools nationwide for WAEC performance three years in a row.</p>
-      </div>
-      <div class="award-box">
-        <h3>Innovation in ICT Education</h3>
-        <p>Recognized for integrating smart classrooms and digital learning tools in 2023 & 2025.</p>
-      </div>
-      <div class="award-box">
-        <h3>National Science Olympiad Finalist</h3>
-        <p>Our students consistently represent Ogun State in national science competitions.</p>
+  <!-- Awards Section -->
+  <section class="awards-section section-padding">
+    <div class="container">
+      <h2 class="section-title">🏆 Awards & Achievements</h2>
+      <p class="section-subtitle">Celebrating our legacy of excellence</p>
+      <div class="awards-grid">
+        <div class="award-box">
+          <h3>Best Secondary School in Ogun State</h3>
+          <p>Awarded by the Ogun State Ministry of Education for outstanding academic results – 2024.</p>
+        </div>
+        <div class="award-box">
+          <h3>Top WAEC Performer</h3>
+          <p>Ranked among the top 5 schools nationwide for WAEC performance three years in a row.</p>
+        </div>
+        <div class="award-box">
+          <h3>Innovation in ICT Education</h3>
+          <p>Recognized for integrating smart classrooms and digital learning tools in 2023 & 2025.</p>
+        </div>
+        <div class="award-box">
+          <h3>National Science Olympiad Finalist</h3>
+          <p>Our students consistently represent Ogun State in national science competitions.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- Admission Section -->
   <section class="admission-section section-padding" id="admissions">
     <div class="admission-image">
-      <img src="/assets/IMG-20250702-WA0029.jpg" alt="Admission Image" />
+      <img src="/assets/IMG-20250702-WA0029.jpg" alt="Students enrolling at Al-Azeem" />
     </div>
     <div class="admission-content">
       <h2>Apply for Admission</h2>
       <h3>2025/2026 Academic Session Now Open</h3>
-      <p>At Al-Azeem Model College, we guide students toward academic excellence and spiritual development. Enroll now to secure your child's future.</p>
+      <p>At Al-Azeem Model College, we guide students toward academic excellence and spiritual development. Enroll now
+        to secure your child's future.</p>
       <a href="#" class="apply-btn">Apply Now</a>
     </div>
   </section>
