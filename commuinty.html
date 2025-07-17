@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Al-Azeem Community</title>
+  <!-- <link rel="stylesheet" href="community.css" /> -->
+   <style>
+    /* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #fff;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #008000;
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navLinks li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navLinks li a:hover {
+  color: #ffb703;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+}
+
+.overlay.active,
+.navLinks.active {
+  display: block;
+}
+
+/* Hero Section */
+.hero {
+  background: url('/assets/IMG-20250702-WA0025.jpg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-btn {
+  background-color: #ffb703;
+  color: #000;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.hero-btn:hover {
+  background-color: #fb8500;
+}
+
+/* Sections */
+.section-padding {
+  padding: 4rem 2rem;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #008000;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.event-list li {
+  margin-bottom: 1rem;
+  list-style-type: circle;
+}
+
+.support-btn {
+  background-color: #ffb703;
+  color: #000;
+  padding: 0.7rem 1.3rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.support-btn:hover {
+  background-color: #fb8500;
+}
+
+/* Footer */
+.footer {
+  background-color: #008000;
+  color: #fff;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navLinks {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: #094067;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 2rem 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .navLinks.active {
+    display: flex;
+  }
+}
+   </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">🤝 Al-Azeem Community</div>
+    <ul class="navLinks" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#support">Support Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to the Al-Azeem Community</h1>
+      <p>Connecting parents, alumni, and partners with purpose</p>
+      <a href="#about" class="hero-btn">Get Involved</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about section-padding" id="about">
+    <div class="container">
+      <h2>About Our Community</h2>
+      <p>The Al-Azeem Community is a growing network of alumni, parents, and partners committed to supporting the vision of Al-Azeem Model College. From mentorship programs to parent-teacher initiatives and fundraising, our collective strength empowers the school’s mission.</p>
+    </div>
+  </section>
+
+  <!-- Events Section -->
+  <section class="events section-padding" id="events">
+    <div class="container">
+      <h2>Upcoming Events</h2>
+      <ul class="event-list">
+        <li><strong>📅 Alumni Reunion:</strong> August 10, 2025 – Celebrate and reconnect.</li>
+        <li><strong>🎓 Parent Forum:</strong> September 2, 2025 – Discuss progress and plans.</li>
+        <li><strong>💡 Innovation Fair:</strong> October 15, 2025 – Support student projects.</li>
+      </ul>
+    </div>
+  </section>
+
+
+
+  <section class="section-padding vision-mission">
+  <div class="container">
+    <h2>Our Vision</h2>
+    <p>To build ideal and Islamic spirited educated individuals, who are outstanding role models and exemplary citizens in the diverse society.</p>
+
+    <h2>Our Mission</h2>
+    <ul>
+      <li>Creating learning environment that produces active and excellent students, through the instrumentality of Islamic oriented knowledge, values and inspiration.</li>
+      <li>Transmitting worthwhile secular and Islamic knowledge, providing safe upbringing away from negative influences, and developing strong character through core values of Islam.</li>
+      <li>Maintaining well certified, god-fearing, zealous and highly productive staffs, who integrate ideal Islamic principles, ethics, morals and self disciplines, towards excellent achievement of goals of the school.</li>
+    </ul>
+  </div>
+</section>
+
+
+  <!-- Support Us Section -->
+  <section class="support section-padding" id="support">
+    <div class="container">
+      <h2>Support the Mission</h2>
+      <p>Your support helps us provide scholarships, better facilities, and more opportunities for our students.</p>
+      <a href="#" class="support-btn">Donate Now</a>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact section-padding" id="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>Email: community@alazeemcollege.ng</p>
+      <p>Phone: +234 812 345 6789</p>
+      <p>Location: Ijebu-Ode, Ogun State, Nigeria</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Al-Azeem Community. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Hero slider logic
+const slides = document.querySelectorAll(".hero-slide");
+let index = 0;
+
+function showSlide(i) {
+  slides.forEach((slide, idx) => {
+    slide.classList.remove("active");
+    if (idx === i) slide.classList.add("active");
+  });
+}
+
+function autoSlide() {
+  index = (index + 1) % slides.length;
+  showSlide(index);
+}
+
+setInterval(autoSlide, 5000);
+
+// Mobile nav toggle
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+const overlay = document.getElementById('overlay');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  overlay.classList.toggle('active');
+});
+
+overlay.addEventListener('click', () => {
+  navLinks.classList.remove('active');
+  overlay.classList.remove('active');
+});
+  </script>
+</body>
+
+</html>
