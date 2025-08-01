@@ -554,6 +554,43 @@
         width: 100%;
       }
     }
+    /* Gallery Section */
+.gallery-section {
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.gallery-grid img {
+  width: 220px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .gallery-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .gallery-grid img {
+    width: 90vw;
+    height: 180px;
+  }
+}
   </style>
 </head>
 
@@ -705,7 +742,41 @@
       <a href="#" class="apply-btn">Apply Now</a>
     </div>
   </section>
+<!-- ...existing code... -->
 
+<!-- Gallery Section -->
+<section class="gallery-section section-padding">
+  <div class="container">
+    <h2 class="section-title">📸 School Gallery</h2>
+    <p class="section-subtitle">Explore moments from Al-Azeem Model College</p>
+    <div class="gallery-grid">
+      <img src="/assets/IMG-20250702-WA0023.jpg" alt="Gallery Image 1" />
+      <img src="/assets/IMG-20250702-WA0025.jpg" alt="Gallery Image 2" />
+      <img src="/assets/IMG-20250702-WA0026.jpg" alt="Gallery Image 3" />
+      <img src="/assets/IMG-20250702-WA0029.jpg" alt="Gallery Image 4" />
+      <img src="/assets/IMG-20250702-WA0030.jpg" alt="Gallery Image 5" />
+      <img src="/assets/IMG-20250702-WA0024.jpg" alt="">
+      <img src="/assets/IMG-20250702-WA0027.jpg" alt="">
+      <img src="/assets/IMG-20250801-WA0002.jpg" alt="">
+      <img src="/assets/IMG-20250801-WA0003.jpg" alt="">
+      <img src="/assets/IMG-20250801-WA0004.jpg" alt="">
+      <img src="/assets/IMG-20250801-WA0005.jpg" alt="">
+      <img src="/assets/IMG-20250801-WA0006.jpg" alt="">
+      <img src="/assets/IMG-20250801-WA0007.jpg" alt="">
+      <img src="/assets/IMG-20250801-WA0008.jpg" alt="">
+      <img src="/assets/IMG-20250801-WA0009.jpg" alt="">
+      <img src="/assets/IMG-20250801-WA0010.jpg" alt="">
+      <img src="/assets/IMG-20250801-WA0011.jpg" alt="">
+      <img src="/assets/IMG-20250801-WA0012.jpg" alt="">
+      <img src="/assets/IMG-20250801-WA0013.jpg" alt    ="">
+      <!-- <img src="/assets/IMG-20250801-WA0014.jpg" alt="">
+      <img src="/assets/IMG-20250801-WA0015.jpg" alt  =""> -->
+      <!-- Add more images as needed -->
+    </div>
+  </div>
+</section>
+
+<!-- ...existing code... -->
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-content">
